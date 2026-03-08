@@ -1,0 +1,28 @@
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.banner {
+  position: relative;
+}
+
+.heroImage {
+  width: 100%;
+  object-fit: cover;
+  object-position: bottom center;
+  opacity: 0.6;
+  height: 600px;
+}
+
+.banner h1 {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  font-family: var(--f1);
+  font-size: 80px;
+  color: var(--yellow1);
+  text-decoration-thickness: 12px;
+}

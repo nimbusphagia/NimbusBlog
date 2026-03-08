@@ -1,0 +1,38 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  color: var(--yellow1);
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.navLinks {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+.navLinks a {
+  text-align: center;
+  transition: text-decoration 0.3s ease-in;
+}
+
+/* IMPORT DASHED TITLE CLASS */
+
+.navLogo {
+  font-size: 24px;
+}
+
+.login {
+  font-family: var(--f1);
+  font-weight: 100;
+  font-size: 16px;
+  color: var(--yellow2);
+  padding: 6px 15px;
+  border-radius: 2px;
+}
+
+.login:hover {
+  color: var(--orange1);
+}

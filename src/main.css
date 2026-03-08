@@ -1,0 +1,109 @@
+@font-face {
+  font-family: 'Bitmap';
+  src: url('./assets/fonts/Bitmap.woff2') format('woff2');
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: 'Dico';
+  src: url('./assets/fonts/Dico.woff2') format('woff2');
+  font-display: swap;
+}
+
+body {
+  /* FONTS */
+  --f1: 'Bitmap';
+  --f2: 'Dico';
+  /* COLORS */
+  --bg0: #282828;
+  --bgLight: #bfb2b2;
+  --dark: #1d2021;
+  --yellow0: #d5c4a1;
+  --yellow1: #f9b45b;
+  --blue0: #313948;
+  --blue1: #36495d;
+  --blue2: #3399b9;
+  --green1: #49a46c;
+  --green2: #1da853;
+  --pink0: #d3869b;
+  --pink1: #ec639d;
+  --dullRed: #b91c57;
+  --red0: #d70f5a;
+  --red1: #e80c35;
+  --orange0: #fbae7f;
+  --orange1: #f45b54;
+  /* BODY STYLES */
+  margin: 0;
+  padding: 0;
+  font-family: var(--f2);
+  background-color: var(--bgLight);
+  color: var(--orange0);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+a,
+button,
+li,
+ul {
+  color: inherit;
+  font-family: inherit;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+
+a,
+button {
+  display: block;
+}
+
+button {
+  background-color: transparent;
+  padding: none;
+  border: none;
+  font: inherit;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+input,
+textarea {
+  font-family: inherit;
+  background-color: inherit;
+  border: none;
+  color: inherit;
+  outline: none;
+}
+
+/* GENERAL STYLES */
+.blueCard {
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  background-color: var(--blue1);
+  padding: 15px;
+}
+
+.dashedCard {
+  border: 3.5px dashed;
+  border-radius: 5px;
+  transition: color ease-out 0.1s;
+}
+
+.dottedTitle {
+  text-decoration: underline 5px dotted;
+  text-underline-offset: 8px;
+  transition: color ease-out 0.1s;
+}
+
+.logo {
+  color: var(--orange1);
+  font-weight: bold;
+}

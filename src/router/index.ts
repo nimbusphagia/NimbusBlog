@@ -10,6 +10,7 @@ import { entriesAction } from "../pages/Entries/Entries.action";
 import { AboutPage } from "../pages/About/About";
 import { aboutLoader } from "../pages/About/About.loader";
 import { aboutAction } from "../pages/About/About.action";
+import { EntryPage } from "../pages/Entry/Entry";
 
 export const router = createBrowserRouter([
   {
@@ -24,13 +25,17 @@ export const router = createBrowserRouter([
         action: homeAction,
       },
       {
-        path: 'entries',
+        path: 'posts',
         Component: EntriesPage,
         loader: entriesLoader,
         action: entriesAction,
+        children: [{
+          path: ':id',
+          Component: EntryPage,
+        }],
       },
       {
-        path: 'about',
+        path: 'author',
         Component: AboutPage,
         loader: aboutLoader,
         action: aboutAction,
