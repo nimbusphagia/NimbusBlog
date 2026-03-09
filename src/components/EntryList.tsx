@@ -2,10 +2,10 @@ import { NavLink } from 'react-router-dom'
 import type { Entry } from '../types/Entry'
 
 type ClassList = {
-  container: string,
-  header: string,
-  entries: string,
-  entry: string,
+  container?: string,
+  header?: string,
+  entries?: string,
+  entry?: string,
 }
 type EntryStatProps = {
   title: string,

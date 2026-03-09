@@ -1,0 +1,62 @@
+.body {
+  min-height: 600px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  color: var(--yellow0);
+}
+
+div.yearList {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 25px;
+}
+
+.ylHeader {
+  font-family: var(--f1);
+  font-size: 28px;
+  color: var(--orange1);
+  text-align: center;
+}
+
+.ylMonths {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.monthList {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.mlHeader {
+  font-size: 30px;
+  color: var(--yellow1);
+  padding-left: 15px;
+}
+
+.mlEntries {
+  background-color: rgb(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.mlEntry {
+  color: var(--orange0);
+  font-size: 20px;
+  font-weight: 1000;
+  padding: 8px 25px;
+}
+
+.mlEntry:hover {
+  color: var(--orange1);
+}
