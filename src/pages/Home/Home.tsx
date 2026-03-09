@@ -21,7 +21,7 @@ export function Homepage() {
           className={s.heroImage}
           src="https://images.squarespace-cdn.com/content/v1/54fc8146e4b02a22841f4df7/1697327621162-IWYJTBR84RYH3V5WAMC7/Art_of_Alariko_18.jpeg" alt="" />
         <h1
-          className={`dottedTitle`}
+          className={s.bannerTitle}
         >Welcome</h1>
       </div>
       <div

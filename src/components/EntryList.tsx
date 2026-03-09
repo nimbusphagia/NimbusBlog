@@ -25,7 +25,7 @@ export function EntryList({ title, entries, classList }: EntryStatProps) {
             return (
               <div key={entry.id} >
                 <NavLink
-                  to={`/entries/${entry.id}`}
+                  to={`/posts/${entry.id}`}
                   className={`dashedCard ${classList.entry}`}
                 >{entry.title}</NavLink>
               </div>
