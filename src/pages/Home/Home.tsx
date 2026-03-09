@@ -1,6 +1,15 @@
 import s from './Home.module.css'
+import { EntryList } from '../../components/EntryList'
+import { useLoaderData } from 'react-router-dom'
 
 export function Homepage() {
+  const { mostRecent, mostLiked } = useLoaderData();
+  const entryListClasses = {
+    container: s.entryList,
+    header: s.elHeader,
+    entries: s.elEntries,
+    entry: s.elEntry,
+  }
   return (
     <div
       className={s.body}
@@ -18,6 +27,24 @@ export function Homepage() {
       <div
         className={`blueCard ${s.recommendations}`}
       >
+        <header
+          className={s.rHeader}
+        >
+          Recommendations
+        </header>
+        <div className={s.rLists}>
+          <EntryList
+            title='Most Recent'
+            entries={mostRecent}
+            classList={entryListClasses}
+          />
+          <EntryList
+            title='Most Liked'
+            entries={mostLiked}
+            classList={entryListClasses}
+          />
+
+        </div>
       </div>
     </div>
   )
