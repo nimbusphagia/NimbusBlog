@@ -20,6 +20,7 @@ import { loginAction } from "../pages/Login/Login.action";
 import { SignupPage } from "../pages/Signup/Signup";
 import { signupLoader } from "../pages/Signup/Login.loader";
 import { signupAction } from "../pages/Signup/Login.action";
+import { logoutAction } from "./logoutAction";
 
 export const router = createBrowserRouter([
   {
@@ -67,6 +68,10 @@ export const router = createBrowserRouter([
         loader: signupLoader,
         action: signupAction,
       }
-    ]
+    ],
+  },
+  {
+    path: "/logout",
+    action: logoutAction,
   }
 ]);
