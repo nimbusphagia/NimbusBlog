@@ -2,7 +2,7 @@ import s from './Account.module.css'
 export function AccountPage() {
   return (
     <div
-      className={s.body}
+      className={`blueCard ${s.body}`}
     >
       <main
         className={s.main}
