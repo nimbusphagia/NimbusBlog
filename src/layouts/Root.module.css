@@ -1,6 +1,10 @@
 .body {
+  box-sizing: border-box;
   padding: 15px;
   gap: 20px;
   display: flex;
   flex-direction: column;
+  padding-bottom: var(--footerH);
+  position: relative;
+  min-height: calc(100vh);
 }
