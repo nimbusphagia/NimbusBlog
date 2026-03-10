@@ -11,6 +11,15 @@ import { AboutPage } from "../pages/About/About";
 import { aboutLoader } from "../pages/About/About.loader";
 import { aboutAction } from "../pages/About/About.action";
 import { EntryPage } from "../pages/Entry/Entry";
+import { AccountPage } from "../pages/Account/Account";
+import { accountLoader } from "../pages/Account/Account.loader";
+import { accountAction } from "../pages/Account/Account.action";
+import { LoginPage } from "../pages/Login/Login";
+import { loginLoader } from "../pages/Login/Login.loader";
+import { loginAction } from "../pages/Login/Login.action";
+import { SignupPage } from "../pages/Signup/Signup";
+import { signupLoader } from "../pages/Signup/Login.loader";
+import { signupAction } from "../pages/Signup/Login.action";
 
 export const router = createBrowserRouter([
   {
@@ -40,6 +49,24 @@ export const router = createBrowserRouter([
         loader: aboutLoader,
         action: aboutAction,
       },
+      {
+        path: 'account',
+        Component: AccountPage,
+        loader: accountLoader,
+        action: accountAction,
+      },
+      {
+        path: 'login',
+        Component: LoginPage,
+        loader: loginLoader,
+        action: loginAction,
+      },
+      {
+        path: 'signup',
+        Component: SignupPage,
+        loader: signupLoader,
+        action: signupAction,
+      }
     ]
   }
 ]);
