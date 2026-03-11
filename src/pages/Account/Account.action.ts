@@ -11,7 +11,7 @@ type UserForm = {
   newPassword?: string;
   confirmPassword?: string;
 };
-type ActionError = { type: 'error'; message: string };
+export type ActionError = { type: 'error'; message: string };
 
 function validatePasswordChange(
   oldPassword?: string,

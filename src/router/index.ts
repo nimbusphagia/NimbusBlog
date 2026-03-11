@@ -18,8 +18,8 @@ import { LoginPage } from "../pages/Login/Login";
 import { loginLoader } from "../pages/Login/Login.loader";
 import { loginAction } from "../pages/Login/Login.action";
 import { SignupPage } from "../pages/Signup/Signup";
-import { signupLoader } from "../pages/Signup/Login.loader";
-import { signupAction } from "../pages/Signup/Login.action";
+import { signupLoader } from "../pages/Signup/Signup.loader";
+import { signupAction } from "../pages/Signup/Signup.action";
 import { logoutAction } from "./logoutAction";
 
 export const router = createBrowserRouter([
