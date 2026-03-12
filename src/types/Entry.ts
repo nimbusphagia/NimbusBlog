@@ -14,4 +14,5 @@ export type Entry = {
   blocks: Block[],
   likes: Like[],
   comments: Comment[]
+  _count: { likes: number }
 }
