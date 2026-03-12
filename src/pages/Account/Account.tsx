@@ -2,9 +2,10 @@ import { Form, useFetcher, useLoaderData } from 'react-router-dom'
 import s from './Account.module.css'
 import { useEffect, useState } from 'react';
 import type { FocusEvent } from 'react';
+import type { User } from '../../types/User';
 
 export function AccountPage() {
-  const { user } = useLoaderData();
+  const user = useLoaderData<User>();
   const fetcher = useFetcher();
   const [passwordPrompt, setPasswordPrompt] = useState<boolean>(false);
   const [successMsg, setSuccessMsg] = useState<string | null>(null);

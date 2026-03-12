@@ -1,7 +1,7 @@
-import { redirect, type ActionFunctionArgs } from "react-router-dom";
+import { type ActionFunctionArgs } from "react-router-dom";
 import { apiClient } from "../../apiClient";
 import type { ActionError } from "../Account/Account.action";
-import { login, loginAction } from "../Login/Login.action";
+import { login } from "../Login/Login.action";
 
 type AuthResponse = {
   accessToken: string;

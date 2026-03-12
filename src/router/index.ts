@@ -21,6 +21,8 @@ import { SignupPage } from "../pages/Signup/Signup";
 import { signupLoader } from "../pages/Signup/Signup.loader";
 import { signupAction } from "../pages/Signup/Signup.action";
 import { logoutAction } from "./logoutAction";
+import { entryLoader } from "../pages/Entry/Entry.loader";
+import { entryAction } from "../pages/Entry/Entry.action";
 
 export const router = createBrowserRouter([
   {
@@ -39,10 +41,13 @@ export const router = createBrowserRouter([
         Component: EntriesPage,
         loader: entriesLoader,
         action: entriesAction,
-        children: [{
-          path: ':id',
-          Component: EntryPage,
-        }],
+
+      },
+      {
+        path: 'posts/:id',
+        Component: EntryPage,
+        loader: entryLoader,
+        action: entryAction,
       },
       {
         path: 'author',
@@ -52,6 +57,7 @@ export const router = createBrowserRouter([
       },
       {
         path: 'account',
+        id: "account-route",
         Component: AccountPage,
         loader: accountLoader,
         action: accountAction,

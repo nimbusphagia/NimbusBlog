@@ -1,4 +1,5 @@
 import type { Like } from "./Like"
+import type { User } from "./User"
 
 export type Comment = {
   id: string,
@@ -6,6 +7,8 @@ export type Comment = {
   userId: String,
   text: String,
   createdAt: Date,
-  likes: Like[]
+  likes: Like[],
+  _count: { likes: number },
+  user: User,
 }
 

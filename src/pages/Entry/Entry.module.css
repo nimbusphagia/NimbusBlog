@@ -1,0 +1,166 @@
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+div.entry {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 30px;
+}
+
+.eHeader {
+  font-size: 23px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.blockImg img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.blockHeading {
+  display: flex;
+  text-align: center;
+  font-size: 24px;
+}
+
+.blockText {
+  text-align: justify;
+  line-height: 1.7;
+  font-size: 20px;
+  word-spacing: 0.15em;
+  hyphens: auto;
+}
+
+.eFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(0, 0, 0, 0.05);
+  border-radius: 5px;
+  color: var(--orange1);
+}
+
+.entryInfo,
+.entryActions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px 15px;
+}
+
+.entryDate {
+  font-weight: 1000;
+}
+
+
+form.commentForm {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 30px;
+  text-align: center;
+  gap: 20px;
+}
+
+.commentForm h3 {
+  font-size: 24px;
+}
+
+.commentForm {
+  flex: 1;
+}
+
+.commentForm textarea {
+  box-sizing: border-box;
+  background-color: rgb(0, 0, 0, 0.1);
+  border-radius: 5px;
+  resize: none;
+  width: 100%;
+  padding: 15px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 1000;
+}
+
+.commentForm button {
+  font-family: var(--f1);
+  width: fit-content;
+  margin: auto;
+  padding: 5px 30px;
+  border-width: 3px;
+}
+
+.commentForm button:hover {
+  color: var(--orange1);
+}
+
+div.comments {
+  font-size: 20px;
+  font-weight: 1000;
+  color: var();
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 25px;
+}
+
+.comment {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: rgb(0, 0, 0, 0.05);
+}
+
+.cInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.userInfo {
+  display: grid;
+  grid-template-columns: 50px auto;
+  grid-template-rows: 50px;
+  width: fit-content;
+  align-items: center;
+  gap: 15px;
+}
+
+.userInfo p {
+  width: fit-content;
+  font-family: var(--f1);
+  text-align: left;
+}
+
+.userInfo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 100%;
+}
+
+.cBody {
+  font-size: 22px;
+}
+
+.cActions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
