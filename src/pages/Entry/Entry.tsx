@@ -7,6 +7,8 @@ import s from "./Entry.module.css";
 import type { loaderProps } from "./Entry.loader";
 import type { Comment } from "../../types/Comment";
 import type { User } from "../../types/User";
+import type { Like } from "../../types/Like";
+import { Heart, Trash2 } from "lucide-react";
 
 export function EntryPage() {
   const { entry, user } = useLoaderData<loaderProps>();
@@ -17,6 +19,7 @@ export function EntryPage() {
   const formattedDate = entry.publishedAt
     ? new Date(entry.publishedAt).toLocaleString()
     : "";
+
   return (
     <div className={s.body}>
       <div className={`blueCard ${s.entry}`}>
@@ -52,13 +55,23 @@ export function EntryPage() {
             <p className={s.entryDate}>{formattedDate}</p>
           </div>
           <div className={s.entryActions}>
-            {user &&
+            {user ?
               <fetcher.Form className={s.eLike} method="post">
                 <button name="intent" value="toggleLikeOnEntry">
-                  Like
+                  <EntryHeart
+                    user={user}
+                    entryId={entry.id} />
                 </button>
                 <p>{entry._count.likes}</p>
               </fetcher.Form>
+              :
+              <div
+                className={s.eLike}>
+                <EntryHeart
+                  user={null}
+                  entryId={entry.id} />
+                <p>{entry._count.likes}</p>
+              </div>
             }
 
           </div>
@@ -89,7 +102,7 @@ export function EntryPage() {
 
 type CommentProps = {
   c: Comment;
-  user?: User;
+  user?: User | null;
   authorId: string,
 };
 
@@ -109,32 +122,56 @@ function CommentItem({ c, user, authorId }: CommentProps) {
       </div>
       {user ? (
         <div className={s.cActions}>
-          <fetcher.Form className={s.cLike} method="post">
-            <input type="hidden" name="commentId" value={c.id} />
-            <button name="intent" value="toggleLikeOnComment">
-              Like
-            </button>
-            <p>{c._count.likes}</p>
-          </fetcher.Form>
+
           {(c.userId === user.id || user.role === "ADMIN" || user.id === authorId) && (
             <fetcher.Form className={s.cDelete} method="post">
               <input type="hidden" name="commentId" value={c.id} />
               <button name="intent" value="deleteComment">
-                Delete
+                <Trash2 />
               </button>
             </fetcher.Form>
           )}
+          <fetcher.Form className={s.cLike} method="post">
+            <input type="hidden" name="commentId" value={c.id} />
+            <button name="intent" value="toggleLikeOnComment">
+              <CommentHeart
+                user={user}
+                commentId={c.id}
+              />
+            </button>
+            <p>{c._count.likes}</p>
+          </fetcher.Form>
         </div>
       ) :
         (
           <div
-            className={s.likeTool}
+            className={s.cLike}
           >
-            <p>Likes {c._count.likes}</p>
+            <CommentHeart
+              user={null}
+              commentId={c.id}
+            />
+            <p>{c._count.likes}</p>
           </div>
         )}
     </div>
   );
+}
+function CommentHeart({ user, commentId }: { user: User | null, commentId: string }) {
+  {
+    const isLiked = user ? user.likes?.some((like: Like) => like.commentId === commentId && like.userId === user.id) : false;
+    return (
+      <Heart size={20} fill={isLiked ? "var(--red1)" : "none"} stroke={isLiked ? "var(--red1)" : "gray"} />
+    )
+  }
+}
+function EntryHeart({ user, entryId }: { user: User | null, entryId: string }) {
+  {
+    const isLiked = user ? user.likes?.some((like: Like) => like.entryId === entryId && like.userId === user.id) : false;
+    return (
+      <Heart size={20} fill={isLiked ? "red" : "none"} stroke={isLiked ? "red" : "gray"} />
+    )
+  }
 }
 
 function Text({ block }: { block: Block }) {

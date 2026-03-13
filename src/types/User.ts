@@ -1,3 +1,5 @@
+import type { Like } from "./Like";
+
 export type Role = "AUTHOR" | "ADMIN" | "VIEWER";
 
 export type User = {
@@ -6,6 +8,7 @@ export type User = {
   email: string,
   role: Role,
   imgUrl?: string,
-  description?: string
+  description?: string,
+  likes?: Like[]
 };
 

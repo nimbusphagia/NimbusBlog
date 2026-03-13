@@ -121,7 +121,6 @@ div.comments {
 
 .comment {
   display: flex;
-  align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
   background-color: rgb(0, 0, 0, 0.05);
@@ -160,7 +159,33 @@ div.comments {
 }
 
 .cActions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: auto;
+}
+
+.cLike,
+.eLike {
+  margin-top: auto;
+  grid-column: 2/3;
   display: flex;
   align-items: center;
-  gap: 15px;
+  font-size: 14px;
+  gap: 10px;
+  font-weight: 1000;
+  color: var(--orange0);
+  background-color: rgb(0, 0, 0, 0.05);
+  padding: 8px 15px;
+  border-radius: 8px;
+}
+
+.cDelete {
+  grid-column: 1/2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cDelete button:hover {
+  color: var(--dullRed);
 }

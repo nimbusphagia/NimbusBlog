@@ -4,17 +4,18 @@ import { apiClient } from "../../apiClient";
 import type { User } from "../../types/User";
 export type loaderProps = {
   entry: Entry,
-  user?: User,
+  user: User | null,
 };
 export async function entryLoader({ params }: LoaderFunctionArgs): Promise<loaderProps> {
   try {
     const id = params.id;
     const entry = await apiClient<Entry>(`/public/entries/${id}`);
     try {
-      const user = await apiClient<User>(`/me`);
+      const current = await apiClient<User>("/me");
+      const user = await apiClient<User>(`/public/users/${current.id}`)
       return { entry, user };
     } catch {
-      return { entry };
+      return { entry, user: null };
     }
 
   } catch (error) {
