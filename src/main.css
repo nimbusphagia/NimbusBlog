@@ -109,3 +109,8 @@ textarea {
   color: var(--orange1);
   font-weight: bold;
 }
+
+a.navSelected {
+  color: var(--orange1);
+  text-decoration-color: inherit;
+}

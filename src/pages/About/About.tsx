@@ -20,17 +20,13 @@ export function AboutPage() {
               src={author.imgUrl}
               alt="" />
           </header>
-          <div
-            className={s.veil}
-          >
-            <div className={`dashedCard ${s.main}`}>
-              <h1>
-                {`Hi, I'm ${author.name}`}
-              </h1>
-              <p>
-                {author.description}
-              </p>
-            </div>
+          <div className={`dashedCard ${s.main}`}>
+            <h1>
+              {`About ${author.name}`}
+            </h1>
+            <p>
+              {author.description}
+            </p>
           </div>
         </article>
       </div>

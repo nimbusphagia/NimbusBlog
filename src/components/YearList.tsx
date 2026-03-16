@@ -36,6 +36,7 @@ export function YearList({ months, year, classList, monthClasses }: YearListProp
         {months && months.map(({ month, entries }) => {
           return (
             <EntryList
+              key={year + '_' + month}
               title={month}
               entries={entries}
               classList={monthClasses}

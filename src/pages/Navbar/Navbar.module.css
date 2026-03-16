@@ -15,7 +15,15 @@
 
 .navLinks a {
   text-align: center;
-  transition: text-decoration 0.3s ease-in;
+  text-decoration: underline 2.8px transparent;
+  text-underline-offset: 4px;
+  transition: text-decoration-color 0.2s ease-in;
+  transition: color ease-in 0.2s;
+  padding: 6px 15px;
+}
+
+.navLinks a:hover {
+  color: var(--orange1);
 }
 
 /* IMPORT DASHED TITLE CLASS */

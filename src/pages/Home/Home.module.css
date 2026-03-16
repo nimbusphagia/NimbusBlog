@@ -47,17 +47,17 @@ div.recommendations {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 35px;
+  gap: 55px;
 }
 
 .entryList {
   flex: 1;
-  padding: 20px 25px;
+  padding: 30px 30px;
   text-align: center;
   font-size: 20px;
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 20px;
   background-color: rgb(0, 0, 0, 0.1);
   border-radius: 8px;
 }
@@ -71,17 +71,20 @@ div.recommendations {
 .elEntries {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
 }
 
 a.elEntry {
-  padding: 6px;
-  font-weight: boldest;
+  padding: 8px;
+  font-weight: 1000;
   border-radius: 3px;
   margin: auto;
+  background-color: rgb(0, 0, 0, 0.06);
+  border-color: transparent;
+  transition: border-color ease-in 0.2s, color ease-in 0.2s;
 }
 
 .elEntry:hover {
   color: var(--orange1);
-  background-color: rgb(0, 0, 0, 0.05);
+  border-color: var(--orange1);
 }

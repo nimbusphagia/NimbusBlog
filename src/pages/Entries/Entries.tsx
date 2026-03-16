@@ -20,10 +20,10 @@ export function EntriesPage() {
     <div
       className={s.body}>
       <main className={s.main}>
-
         {entries && entries.map(({ year, months }: YearGroup) => {
           return (
             <YearList
+              key={year}
               months={months}
               year={String(year)}
               classList={yearListClasses}
