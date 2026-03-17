@@ -8,7 +8,6 @@ export async function homeLoader() {
     const [mostRecent, mostLiked] = await Promise.all([
       apiClient<Entry[]>(`/public/users/${AUTHOR_ID}/entries?filter=mostRecent`),
       apiClient<Entry[]>(`/public/users/${AUTHOR_ID}/entries?filter=mostLiked`),
-      new Promise(res => setTimeout(res, 2000)), // 2 second delay
     ]);
     return { mostRecent, mostLiked };
   } catch (error) {

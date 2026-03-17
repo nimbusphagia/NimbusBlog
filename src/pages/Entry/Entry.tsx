@@ -126,9 +126,12 @@ type CommentProps = {
 function CommentItem({ c, user, authorId }: CommentProps) {
   const fetcher = useFetcher();
   const isSubmitting = fetcher.state !== 'idle';
+  const isDeleting = fetcher.formData?.get("intent") === "deleteComment";
 
   return (
-    <div className={`dashedCard ${s.comment}`}>
+    <div
+      className={`dashedCard ${s.comment} ${isDeleting ? s.disabled : ''}`}
+    >
       <div className={s.cInfo}>
         <div className={s.userInfo}>
           <img src={c.user.imgUrl} alt="" />
