@@ -1,6 +1,7 @@
 import {
   useFetcher,
   useLoaderData,
+  NavLink
 } from "react-router-dom";
 import type { Block } from "../../types/Block";
 import s from "./Entry.module.css";
@@ -77,16 +78,26 @@ export function EntryPage() {
           </div>
         </div>
       </div>
-
-      <fetcher.Form method="post" className={`blueCard ${s.commentForm}`}>
-        <h3>Leave a Comment</h3>
-        {user && <input type="hidden" name="userId" value={user.id} />}
-        <textarea name="newComment" rows={1} />
-        <button name="intent" value="createComment" className="dashedCard">
-          Submit
-        </button>
-      </fetcher.Form>
-
+      {user ?
+        <fetcher.Form method="post" className={`blueCard ${s.commentForm}`}>
+          <h3>Leave a Comment</h3>
+          {user && <input type="hidden" name="userId" value={user.id} />}
+          <textarea name="newComment" rows={1} />
+          <button name="intent" value="createComment" className="dashedCard">
+            Submit
+          </button>
+        </fetcher.Form>
+        :
+        <div
+          className={`blueCard ${s.loginPrompt}`}
+        >
+          <p>Wanna leave a comment and interact with posts?</p>
+          <NavLink
+            to='/account'
+            className={`dashedCard ${s.loginLink}`}
+          >Login</NavLink>
+        </div>
+      }
       <div className={`blueCard ${s.comments}`}>
         {entry.comments.length ? (
           entry.comments.map((c) => (

@@ -68,6 +68,36 @@ div.entry {
   font-weight: 1000;
 }
 
+div.loginPrompt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  font-size: 22px;
+  padding: 20px;
+}
+
+a.loginLink {
+  font-family: var(--f1);
+  font-weight: 100;
+  font-size: 18px;
+  color: var(--yellow2);
+  padding: 6px 15px;
+  border-radius: 2px;
+  opacity: 0.9;
+  transition:
+    background-color ease-in 0.1s,
+    color ease-in 0.1s,
+    opacity ease-in 0.1s,
+    text-decoration-color ease-in 0.1s;
+}
+
+a.loginLink:hover {
+  color: var(--orange1);
+  background-color: rgb(0, 0, 0, 0.02);
+  opacity: 1;
+}
 
 form.commentForm {
   display: flex;
@@ -116,7 +146,8 @@ div.comments {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  padding: 25px;
+  padding: 40px 30px;
+  text-align: center;
 }
 
 .comment {
@@ -124,6 +155,7 @@ div.comments {
   justify-content: space-between;
   padding: 10px 20px;
   background-color: rgb(0, 0, 0, 0.05);
+  text-align: left;
 }
 
 .cInfo {
